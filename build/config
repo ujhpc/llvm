@@ -1,0 +1,4 @@
+#!/bin/bash
+export PATH=$LLVMTOP/bin/prod/${ICS_ARCH}_${ICS_ABITYPE}:/usr/bin:$PATH
+../configure --enable-targets=host-only # CC=gcc CXX=g++ $@
+make -j10
