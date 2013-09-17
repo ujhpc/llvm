@@ -19,6 +19,8 @@ if [ -d .svn ]; then
 elif [ -f .git/svn/.metadata ]; then
   git svn info | grep 'URL:' | cut -d: -f2-
 elif [ -d .git ]; then
+  git log -1 --pretty=format:%b|tail -n1| \
+    sed -n 's/.*git-svn-id: \([^@]*\)@[0-9]*.*/\1/p'|grep '.\{1,\}' || \
   git remote -v | grep 'fetch' | awk '{ print $2 }' | head -n1
 else
   exit 1;
