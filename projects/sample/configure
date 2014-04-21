@@ -5625,7 +5625,7 @@ fi
 if test "${with_bug_report_url+set}" = set; then
   withval=$with_bug_report_url;
 else
-  withval="http://llvm.org/bugs/"
+  withval="https://github.com/clang-omp/clang/issues"
 fi
 
 
