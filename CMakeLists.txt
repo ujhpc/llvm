@@ -46,7 +46,7 @@ option(LLVM_APPEND_VC_REV
   "Append the version control system revision id to LLVM version" OFF)
 
 if( LLVM_APPEND_VC_REV )
-  add_version_info_from_vcs(PACKAGE_VERSION)
+  add_version_info_from_vcs(PACKAGE ${CMAKE_CURRENT_SOURCE_DIR})
 endif()
 
 set(PACKAGE_NAME LLVM)
